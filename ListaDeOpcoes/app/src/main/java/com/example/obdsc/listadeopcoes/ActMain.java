@@ -85,7 +85,7 @@ public class ActMain extends AppCompatActivity implements View.OnClickListener {
 
         if (v == btnAdicionar)
         {
-            String item = edtvalor.getText().toString();
+            string item = edtvalor.getText().toString();
             item += "-" + spnOpcoes.getSelectedItem();
             adpDados.add(item);
         }
@@ -94,7 +94,7 @@ public class ActMain extends AppCompatActivity implements View.OnClickListener {
             {
                 if (adpDados.getCount()>0)
                 {
-                    String item = adpDados.getItem(0);
+                   String item = adpDados.getItem(0);
                     adpDados.remove(item);
                 }
             }
