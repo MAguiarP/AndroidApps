@@ -27,6 +27,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    }
+
+    public static class Usuarios{
+        public static final String TABELA = "usuarios";
+        public static final String _ID = "_id";
+        public static final String NOME = "nome";
+        public static final String LOGIN = "login";
+        public static final String SENHA = "senha";
+        public static final String CREATED_AT = "created_at";
+
+        public static final String[] COLUNAS = new String []{
+                _ID, NOME, LOGIN, SENHA, CREATED_AT
+        };
+
+
 
     }
 }
