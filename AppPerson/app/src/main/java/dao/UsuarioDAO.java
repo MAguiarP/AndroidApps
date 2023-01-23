@@ -32,7 +32,11 @@ public class UsuarioDAO {
 
         );
         return model;
+    }
 
+    public void fechar(){
+        databaseHelper.close();
+        database = null ;
     }
 }
 
