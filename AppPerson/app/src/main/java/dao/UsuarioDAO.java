@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.ContactsContract;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +65,11 @@ public class UsuarioDAO {
 
         return getDatabase().insert(DatabaseHelper.Usuarios.TABELA, null, valores);
     }
+
+    public boolean removerUsuario(int id){
+        return getDatabase().delete(DatabaseHelper.Usuarios.TABELA, "_id = ?", new String[]{Integer.toString(id)}) > 0;
+    }
+
 
     public void fechar(){
         databaseHelper.close();
