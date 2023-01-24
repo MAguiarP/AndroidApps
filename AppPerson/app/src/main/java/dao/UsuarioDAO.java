@@ -1,6 +1,7 @@
 package dao;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -46,6 +47,22 @@ public class UsuarioDAO {
         }
         cursor.close();
         return usuarios;
+    }
+
+    public long salvarUsuario(Usuario usuario){
+        ContentValues valores = new ContentValues();
+        valores.put(DatabaseHelper.Usuarios.NOME, usuario.getNome());
+        valores.put(DatabaseHelper.Usuarios.LOGIN, usuario.getLogin());
+        valores.put(DatabaseHelper.Usuarios.SENHA, usuario.getSenha());
+        valores.put(DatabaseHelper.Usuarios.CREATED_AT, usuario.getCreated_at());
+
+        if(usuario.get_id()!=null) {
+            return
+                    getDatabase().update(DatabaseHelper.Usuarios.TABELA, valores, "_id = ? ", new String[]{usuario.get_id().toString()});
+        }
+
+
+        return getDatabase().insert(DatabaseHelper.Usuarios.TABELA, null, valores);
     }
 
     public void fechar(){
