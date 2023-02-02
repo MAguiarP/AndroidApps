@@ -50,7 +50,7 @@ public class UsuarioDAO {
         return usuarios;
     }
 
-    public long salvarUsuario(Usuario usuario){
+    public long salvarusuario(Usuario usuario){
         ContentValues valores = new ContentValues();
         valores.put(DatabaseHelper.Usuarios.NOME, usuario.getNome());
         valores.put(DatabaseHelper.Usuarios.LOGIN, usuario.getLogin());
